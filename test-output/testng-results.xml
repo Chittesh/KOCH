@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="18613" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:56Z">
+  <suite name="Suite" duration-ms="38460" started-at="2020-08-17T16:43:13Z" finished-at="2020-08-17T16:43:51Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="18613" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:56Z">
+    <test name="Test" duration-ms="38460" started-at="2020-08-17T16:43:13Z" finished-at="2020-08-17T16:43:51Z">
       <class name="koch.com.ixigo.verifyIxigo">
-        <test-method status="PASS" signature="driverSetup()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="driverSetup" is-config="true" duration-ms="3577" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:41Z">
+        <test-method status="PASS" signature="driverSetup()[pri:0, instance:koch.com.ixigo.verifyIxigo@2f8f5f62]" name="driverSetup" is-config="true" duration-ms="4430" started-at="2020-08-17T16:43:13Z" finished-at="2020-08-17T16:43:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverSetup -->
-        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="verifyIxigoPageIsLoaded" duration-ms="14259" started-at="2020-08-17T12:32:41Z" finished-at="2020-08-17T12:32:55Z">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@2f8f5f62]" name="verifyIxigoPageIsLoaded" duration-ms="33230" started-at="2020-08-17T16:43:17Z" finished-at="2020-08-17T16:43:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="driverClose" is-config="true" duration-ms="731" started-at="2020-08-17T12:32:55Z" finished-at="2020-08-17T12:32:56Z">
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.verifyIxigo@2f8f5f62]" name="driverClose" is-config="true" duration-ms="759" started-at="2020-08-17T16:43:51Z" finished-at="2020-08-17T16:43:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->

@@ -26,6 +26,7 @@ public class TestEnvironment {
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		driver = new ChromeDriver(capabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
 	}
 
 	@AfterMethod(alwaysRun = true)

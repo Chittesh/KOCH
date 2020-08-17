@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="18613" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:56Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="18613" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:56Z">
+      <class name="koch.com.ixigo.verifyIxigo">
+        <test-method status="PASS" signature="driverSetup()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="driverSetup" is-config="true" duration-ms="3577" started-at="2020-08-17T12:32:37Z" finished-at="2020-08-17T12:32:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverSetup -->
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="verifyIxigoPageIsLoaded" duration-ms="14259" started-at="2020-08-17T12:32:41Z" finished-at="2020-08-17T12:32:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.verifyIxigo@11758f2a]" name="driverClose" is-config="true" duration-ms="731" started-at="2020-08-17T12:32:55Z" finished-at="2020-08-17T12:32:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverClose -->
+      </class> <!-- koch.com.ixigo.verifyIxigo -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

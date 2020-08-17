@@ -5,6 +5,7 @@
     <classes>
       <class name="koch.com.ixigo.verifyIxigo">
         <methods>
+          <include name="driverClose"/>
           <include name="driverSetup"/>
           <include name="verifyIxigoPageIsLoaded"/>
         </methods>
