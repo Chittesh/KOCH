@@ -8,6 +8,7 @@
           <include name="verifyNonStopFlights"/>
           <include name="driverClose"/>
           <include name="driverSetup"/>
+          <include name="verifyFlightsWithFareLessThanFiveThosuand"/>
           <include name="verifyPassangerDetailsAreAdded"/>
           <include name="verifyIxigoPageIsLoaded"/>
         </methods>

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,11 +26,11 @@ public class verifyIxigo extends TestEnvironment {
 		Assert.assertTrue(objIxigoHomePage.verifyIxiLogoIsPresent(), "Verify Ixi Logo is present");
 		System.out.println("Verifying From Place Input is present");
 		Assert.assertTrue(objIxigoHomePage.verifyFromInputIsPresent(), "Verify From Date Input filed is present");
-		System.out.println("Getting Default Departure Date");
+		System.out.println("Getting Default Departure Date : " + objIxigoHomePage.getDefaultDepartureDate());
 		Assert.assertEquals(objIxigoHomePage.getDefaultDepartureDate(), expectedDepartureDate,
 				"Verify Departure Date Acutual : " + objIxigoHomePage.getDefaultDepartureDate() + " Expected is : "
 						+ expectedDepartureDate);
-		System.out.println("Getting Default Travellers data");
+		System.out.println("Getting Default Travellers text : " + objIxigoHomePage.getDefaultTravellers());
 		Assert.assertEquals(objIxigoHomePage.getDefaultTravellers(), StaticConstantClass.expectedDefaultTravellers,
 				"Verify Default Travllers Acutual : " + objIxigoHomePage.getDefaultTravellers() + " Expected is : "
 						+ StaticConstantClass.expectedDefaultTravellers);
@@ -61,6 +63,10 @@ public class verifyIxigo extends TestEnvironment {
 		String actualcaldateAfterOneWeek = actualsdf.format(actualcal.getTime());
 
 		System.out.println("Verification Passanger Details starts here");
+		System.out.println("Passanger Details captured from Booking page are");
+		for (Entry<String, String> entry : hm.entrySet()) {
+			System.out.println(entry.getKey());
+		}
 		Assert.assertEquals(hm.get("From Place"), StaticConstantClass.fromLocation, "Verify From Place Acutual : "
 				+ hm.get("From Place") + " Expected is : " + StaticConstantClass.fromLocation);
 		Assert.assertEquals(hm.get("To Place"), StaticConstantClass.toLocation,
@@ -132,6 +138,36 @@ public class verifyIxigo extends TestEnvironment {
 				"Verify In Departure Flight list dosen't have 2 stops");
 		Assert.assertFalse(lsReturnStops.stream().anyMatch(stop_2::contains),
 				"Verify In Return Flight list dosen't have 2 stops");
+
+		System.out.println("Checking Non Stop ICON");
+		objBookingPage.checkNonStopIcon();
+	}
+
+	@Test(dependsOnMethods = "verifyNonStopFlights")
+	public void verifyFlightsWithFareLessThanFiveThosuand() throws InterruptedException {
+		BookingPage objBookingPage = new BookingPage(driver);
+		System.out.println("Getting Fare Details of Departure Flights");
+		List<String> lsDepartureFares = new ArrayList<String>();
+		lsDepartureFares = objBookingPage.getDepartureFareFromFlights();
+		System.out.println("Fare Details Details of Deaprture flight");
+		lsDepartureFares.stream().forEach(System.out::println);
+		lsDepartureFares.clear();
+		System.out.println("*****************************************************************");
+		System.out.println("Getting Fare Details of Return Flights");
+		List<String> lsReturnFares = new ArrayList<String>();
+		lsReturnFares = objBookingPage.getReturnFareFromFlights();
+		System.out.println("Fare Details Details of Return flight");
+		lsReturnFares.stream().forEach(System.out::println);
+		lsReturnFares.clear();
+		System.out.println("*****************************************************************");
+		System.out.println("Getting Fare Details of Departure Flights which is having Fare less than 5000");
+		System.out.println("Details of Deaprture flight which is having Fare less than 5000");
+		objBookingPage.getDepartureFareFromFlightsLessThanFiveThousand();
+		System.out.println("*****************************************************************");
+		System.out.println("Getting Fare Details of Return Flights which is having Fare less than 5000");
+		System.out.println("Details of Return flight which is having Fare less than 5000");
+		objBookingPage.getReturnFareFromFlightsLessThanFiveThousand();
+		System.out.println("*****************************************************************");
 	}
 
 }

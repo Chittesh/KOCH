@@ -57,14 +57,14 @@ public class IxigoHomePage extends BasePage {
 			throws InterruptedException {
 		System.out.println("Entering details to Search flights");
 
-		System.out.println("Entering From Place");
+		System.out.println("Entering From Place as : "+from);
 		webElmFromInput.clear();
 		Thread.sleep(2000);
 		webElmFromInput.sendKeys(from);
 		Thread.sleep(2000);
 		webElmFromInput.sendKeys(Keys.ENTER);
 
-		System.out.println("Entering To Place");
+		System.out.println("Entering To Place as : "+to);
 		webElmToInput.clear();
 		Thread.sleep(2000);
 		webElmToInput.sendKeys(to);
@@ -72,7 +72,7 @@ public class IxigoHomePage extends BasePage {
 		webElmToInput.sendKeys(Keys.ENTER);
 	
 		Thread.sleep(2000);
-		System.out.println("Selecting Depart Date");
+		System.out.println("Selecting Depart Date as :"+tommorowsDate);
 		webElmDepart.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableFrom));
@@ -80,7 +80,7 @@ public class IxigoHomePage extends BasePage {
 				.findElement(By.xpath("//*[contains(@class,'rd-date')]//table//*[@data-date='" + tommorowsDate + "']"));
 		fromDate.click();
 		Thread.sleep(2000);
-		System.out.println("Selecting Return Date");
+		System.out.println("Selecting Return Date as : "+dateAfterOneWeek);
 		webElmReturn.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableTo));
@@ -89,7 +89,7 @@ public class IxigoHomePage extends BasePage {
 		toDate.click();
 		Thread.sleep(2000);
 
-		System.out.println("Selecting No of Travellers");
+		System.out.println("Selecting No of Travellers as 2");
 		webElmTarvellers.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateNoOfTravellers));

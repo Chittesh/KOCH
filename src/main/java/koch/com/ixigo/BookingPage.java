@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,10 +36,15 @@ public class BookingPage extends BasePage {
 	private List<WebElement> WebNoOFDepartureFlights;
 	@FindBy(xpath = "//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[@class='stop']")
 	private List<WebElement> WebNoOFDepartureFlightsStop;
+	@FindBy(xpath = "//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'price-display')]//span[2]")
+	private List<WebElement> WebNoOFDepartureFlightsPrice;
+
 	@FindBy(xpath = "//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]")
 	private List<WebElement> WebNoOFReturnFlights;
 	@FindBy(xpath = "//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]//*[@class='stop']")
 	private List<WebElement> WebNoOFReturnFlightsStop;
+	@FindBy(xpath = "//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'price-display')]//span[2]")
+	private List<WebElement> WebNoOFReturFlightsPrice;
 	@FindBy(xpath = "//*[contains(text(),'Non stop')]/../..//*[contains(@class,'check-icon')]")
 	private WebElement WebNonStopCheckIcon;
 
@@ -98,13 +104,69 @@ public class BookingPage extends BasePage {
 		}
 		return ls;
 	}
-	
+
 	public List<String> getReturnStopsFromFlights() {
 		List<String> ls = new ArrayList<String>();
 		for (int i = 0; i < WebNoOFReturnFlightsStop.size(); i++) {
 			ls.add(WebNoOFReturnFlightsStop.get(i).getText());
 		}
 		return ls;
+	}
+
+	public List<String> getDepartureFareFromFlights() {
+		List<String> ls = new ArrayList<String>();
+		for (int i = 0; i < WebNoOFDepartureFlightsPrice.size(); i++) {
+			ls.add(WebNoOFDepartureFlightsPrice.get(i).getText());
+		}
+		return ls;
+	}
+
+	public List<String> getReturnFareFromFlights() {
+		List<String> ls = new ArrayList<String>();
+		for (int i = 0; i < WebNoOFReturFlightsPrice.size(); i++) {
+			ls.add(WebNoOFReturFlightsPrice.get(i).getText());
+		}
+		return ls;
+	}
+
+	public void getDepartureFareFromFlightsLessThanFiveThousand() {
+		List<String> ls = new ArrayList<String>();
+		for (int i = 0; i < WebNoOFDepartureFlightsPrice.size(); i++) {
+			String value = WebNoOFDepartureFlightsPrice.get(i).getText();
+			int integerValue = Integer.parseInt(value);
+			if (integerValue < 5000) {
+				System.out.println("##########################################");
+				String xpathOfFlightName = "(//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'airline-text')]//div)["
+						+ (i + 1) + "]";
+				String xpathOfDepartureTime = "(//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'time-group')]//div[@class='time'][1])["
+						+ (i + 1) + "]";
+				System.out.println("Flight Name is : " + driver.findElement(By.xpath(xpathOfFlightName)).getText());
+				System.out
+						.println("Departure Time is : " + driver.findElement(By.xpath(xpathOfDepartureTime)).getText());
+				System.out.println("Fare value is : " + String.valueOf(integerValue));
+				System.out.println("##########################################");
+			}
+		}
+	}
+
+	public void getReturnFareFromFlightsLessThanFiveThousand() {
+		List<String> ls = new ArrayList<String>();
+		for (int i = 0; i < WebNoOFReturFlightsPrice.size(); i++) {
+			String value = WebNoOFReturFlightsPrice.get(i).getText();
+			int integerValue = Integer.parseInt(value);
+			if (integerValue < 5000) {
+				System.out.println("##########################################");
+				String xpathOfFlightName = "(//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'airline-text')]//div)["
+						+ (i + 1) + "]";
+				String xpathOfDepartureTime = "(//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'time-group')]//div[@class='time'][1])["
+						+ (i + 1) + "]";
+				System.out.println("Flight Name is : " + driver.findElement(By.xpath(xpathOfFlightName)).getText());
+				System.out
+						.println("Departure Time is : " + driver.findElement(By.xpath(xpathOfDepartureTime)).getText());
+				System.out.println("Fare value is : " + String.valueOf(integerValue));
+				System.out.println("##########################################");
+			}
+		}
 	}
 
 }
