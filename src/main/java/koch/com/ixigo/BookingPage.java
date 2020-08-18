@@ -24,21 +24,18 @@ public class BookingPage extends BasePage {
 	private WebElement webElmReturn;
 	@FindBy(xpath = "//*[contains(text(),'Travellers | Class')]/following-sibling::input")
 	private WebElement webElmTarvellers;
-
 	@FindBy(xpath = "//*[contains(text(),'Stops')]/parent::*[@class='fltr']")
 	private WebElement webElmStopsSection;
 	@FindBy(xpath = "//*[contains(text(),'Departure from')]/parent::*[contains(@class,'fltr')]")
 	private WebElement webElmDeparturefromSection;
 	@FindBy(xpath = "//*[contains(text(),'Airlines')]/parent::*[contains(@class,'fltr')]")
 	private WebElement webAirlinesSection;
-
 	@FindBy(xpath = "//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]")
 	private List<WebElement> WebNoOFDepartureFlights;
 	@FindBy(xpath = "//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[@class='stop']")
 	private List<WebElement> WebNoOFDepartureFlightsStop;
 	@FindBy(xpath = "//*[@class='result-col outr']//*[contains(@class,'c-flight-listing-split-row')]//*[contains(@class,'price-display')]//span[2]")
 	private List<WebElement> WebNoOFDepartureFlightsPrice;
-
 	@FindBy(xpath = "//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]")
 	private List<WebElement> WebNoOFReturnFlights;
 	@FindBy(xpath = "//*[@class='result-col']//*[contains(@class,'c-flight-listing-split-row')]//*[@class='stop']")
