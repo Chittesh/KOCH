@@ -54,6 +54,10 @@ public class verifyIxigo extends TestEnvironment {
 			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 		System.out.println("*****************************************************************");
+		
+		System.out.println("Verifying atleast One Departure and atleast One Return Flight is present");
+		Assert.assertTrue(objBookingPage.getNoOFDepartureFlights()>=1,"Verify Atleast One Departure flight is present");
+		Assert.assertTrue(objBookingPage.getNoOFReturnFlights()>=1,"Verify Atleast One Return flight is present");	
 		Assert.assertEquals(hm.get("Departure Place"), StaticConstantClass.fromLocation, "Verify From Place Acutual : "
 				+ hm.get("Departure Place") + " Expected is : " + StaticConstantClass.fromLocation);
 		Assert.assertEquals(hm.get("Destination Place"), StaticConstantClass.toLocation, "Verify To Place Acutual : "
