@@ -23,7 +23,7 @@ public class BasePage {
 	}
 
 	public boolean verifyElementIsPresent(String xpathOfElement) {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebDriverWait wait = new WebDriverWait(driver, 40);
 		WebElement elm;
 		elm = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathOfElement)));
 		return elm.isDisplayed();

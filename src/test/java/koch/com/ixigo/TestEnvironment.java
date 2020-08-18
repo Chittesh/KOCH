@@ -27,7 +27,7 @@ public class TestEnvironment {
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		driver = new ChromeDriver(capabilities);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 

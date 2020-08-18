@@ -29,6 +29,10 @@ public class IxigoHomePage extends BasePage {
 	private WebElement webElmDateTableTo;
 	@FindBy(xpath = "//*[contains(text(),'Adult')]/ancestor::*[contains(@class,'number-counter')]//*[@data-val='2']")
 	private WebElement webElmDateNoOfTravellers;
+	@FindBy(xpath = "//button[@class='ixi-icon-arrow rd-next']")
+	private WebElement webElmDateNextIcon;
+	
+	
 
 	public IxigoHomePage(WebDriver driver) {
 		super(driver);
@@ -53,7 +57,7 @@ public class IxigoHomePage extends BasePage {
 		return webElmTarvellers.getAttribute("value");
 	}
 
-	public void enterTravelDetails(String from, String to, String tommorowsDate, String dateAfterOneWeek)
+	public void enterTravelDetails(String from, String to, String depDate, String retDate)
 			throws InterruptedException {
 		System.out.println("Entering details to Search flights");
 
@@ -72,20 +76,22 @@ public class IxigoHomePage extends BasePage {
 		webElmToInput.sendKeys(Keys.ENTER);
 	
 		Thread.sleep(2000);
-		System.out.println("Selecting Depart Date as :"+tommorowsDate);
+		System.out.println("Selecting Depart Date as :"+depDate);
 		webElmDepart.click();
+		Thread.sleep(2000);
+		webElmDateNextIcon.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableFrom));
 		WebElement fromDate = driver
-				.findElement(By.xpath("//*[contains(@class,'rd-date')]//table//*[@data-date='" + tommorowsDate + "']"));
+				.findElement(By.xpath("//*[contains(@class,'rd-date')]//table//*[@data-date='" + depDate + "']"));
 		fromDate.click();
 		Thread.sleep(2000);
-		System.out.println("Selecting Return Date as : "+dateAfterOneWeek);
+		System.out.println("Selecting Return Date as : "+retDate);
 		webElmReturn.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableTo));
 		WebElement toDate = driver.findElement(
-				By.xpath("(//*[contains(@class,'rd-date')]//table//*[@data-date='" + dateAfterOneWeek + "'])[last()]"));
+				By.xpath("(//*[contains(@class,'rd-date')]//table//*[@data-date='" + retDate + "'])[last()]"));
 		toDate.click();
 		Thread.sleep(2000);
 

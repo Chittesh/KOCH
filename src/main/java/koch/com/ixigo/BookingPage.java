@@ -76,8 +76,8 @@ public class BookingPage extends BasePage {
 	public HashMap<String, String> getPassangerDetails() {
 		System.out.println("Getting Passanger Deatils from Booking Page Header");
 		HashMap<String, String> hm = new HashMap<String, String>();
-		hm.put("From Place", webElmFromInput.getAttribute("value"));
-		hm.put("To Place", webElmToInput.getAttribute("value"));
+		hm.put("Departure Place", webElmFromInput.getAttribute("value"));
+		hm.put("Destination Place", webElmToInput.getAttribute("value"));
 		hm.put("Depart Date", webElmDepart.getAttribute("value"));
 		hm.put("Return Date", webElmReturn.getAttribute("value"));
 		hm.put("No Of Passangers", webElmTarvellers.getAttribute("value"));
@@ -130,7 +130,6 @@ public class BookingPage extends BasePage {
 	}
 
 	public void getDepartureFareFromFlightsLessThanFiveThousand() {
-		List<String> ls = new ArrayList<String>();
 		for (int i = 0; i < WebNoOFDepartureFlightsPrice.size(); i++) {
 			String value = WebNoOFDepartureFlightsPrice.get(i).getText();
 			int integerValue = Integer.parseInt(value);
@@ -150,7 +149,6 @@ public class BookingPage extends BasePage {
 	}
 
 	public void getReturnFareFromFlightsLessThanFiveThousand() {
-		List<String> ls = new ArrayList<String>();
 		for (int i = 0; i < WebNoOFReturFlightsPrice.size(); i++) {
 			String value = WebNoOFReturFlightsPrice.get(i).getText();
 			int integerValue = Integer.parseInt(value);
