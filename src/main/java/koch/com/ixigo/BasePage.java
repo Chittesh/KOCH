@@ -1,7 +1,6 @@
 package koch.com.ixigo;
 
 import java.util.ResourceBundle;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,20 +18,22 @@ public class BasePage {
 	}
 
 	public void launchPage() {
+		System.out.println("Launching URL");
 		driver.get(urls.getString("baseUrl"));
 	}
 
 	public boolean verifyElementIsPresent(String xpathOfElement) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		WebElement elm;
-		elm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathOfElement)));
+		elm = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathOfElement)));
 		return elm.isDisplayed();
 
 	}
 
 	public String getLocatorInfo(WebElement element) {
 		int startIndex = element.toString().indexOf("xpath:");
-		return element.toString().substring(startIndex,element.toString().length()-1).replaceAll("xpath:", "").trim();
+		return element.toString().substring(startIndex, element.toString().length() - 1).replaceAll("xpath:", "")
+				.trim();
 
 	}
 }

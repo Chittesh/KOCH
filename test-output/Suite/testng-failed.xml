@@ -5,8 +5,10 @@
     <classes>
       <class name="koch.com.ixigo.verifyIxigo">
         <methods>
+          <include name="verifyNonStopFlights"/>
           <include name="driverClose"/>
           <include name="driverSetup"/>
+          <include name="verifyPassangerDetailsAreAdded"/>
           <include name="verifyIxigoPageIsLoaded"/>
         </methods>
       </class> <!-- koch.com.ixigo.verifyIxigo -->

@@ -1,9 +1,5 @@
 package koch.com.ixigo;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class IxigoHomePage extends BasePage {
-	static ResourceBundle urls = ResourceBundle.getBundle("urls");
 
 	@FindBy(xpath = "//*[@id='ixiLogoImg']")
 	private WebElement elmIxiLogo;
@@ -58,40 +53,50 @@ public class IxigoHomePage extends BasePage {
 		return webElmTarvellers.getAttribute("value");
 	}
 
-	public void enterTravelDetails(String from, String to,String tommorowsDate,String dateAfterOneWeek) throws InterruptedException {
+	public void enterTravelDetails(String from, String to, String tommorowsDate, String dateAfterOneWeek)
+			throws InterruptedException {
+		System.out.println("Entering details to Search flights");
+
+		System.out.println("Entering From Place");
 		webElmFromInput.clear();
 		Thread.sleep(2000);
 		webElmFromInput.sendKeys(from);
 		Thread.sleep(2000);
 		webElmFromInput.sendKeys(Keys.ENTER);
 
+		System.out.println("Entering To Place");
 		webElmToInput.clear();
 		Thread.sleep(2000);
 		webElmToInput.sendKeys(to);
 		Thread.sleep(2000);
 		webElmToInput.sendKeys(Keys.ENTER);
-
+	
+		Thread.sleep(2000);
+		System.out.println("Selecting Depart Date");
 		webElmDepart.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableFrom));
 		WebElement fromDate = driver
-				.findElement(By.xpath("//*[contains(@class,'rd-date')]//table//*[@data-date='"+tommorowsDate+"']"));
+				.findElement(By.xpath("//*[contains(@class,'rd-date')]//table//*[@data-date='" + tommorowsDate + "']"));
 		fromDate.click();
 		Thread.sleep(2000);
+		System.out.println("Selecting Return Date");
 		webElmReturn.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableTo));
-		WebElement toDate = driver
-				.findElement(By.xpath("(//*[contains(@class,'rd-date')]//table//*[@data-date='"+dateAfterOneWeek+"'])[last()]"));
+		WebElement toDate = driver.findElement(
+				By.xpath("(//*[contains(@class,'rd-date')]//table//*[@data-date='" + dateAfterOneWeek + "'])[last()]"));
 		toDate.click();
 		Thread.sleep(2000);
+
+		System.out.println("Selecting No of Travellers");
 		webElmTarvellers.click();
 		Thread.sleep(2000);
-
 		verifyElementIsPresent(getLocatorInfo(webElmDateNoOfTravellers));
 		webElmDateNoOfTravellers.click();
 		Thread.sleep(2000);
 
+		System.out.println("Clicking Search Button");
 		webElmSearchButton.click();
 
 	}
