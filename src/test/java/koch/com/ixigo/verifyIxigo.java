@@ -1,8 +1,11 @@
 package koch.com.ixigo;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -14,9 +17,12 @@ public class verifyIxigo extends TestEnvironment {
 
 	static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd MMM, EEE");
 	static final String expectedDepartureDate = dtf.format(LocalDateTime.now());
+	static String fromDate;
+	static String toDate;
 
 	@Test()
 	public void verifyIxigoPageIsLoaded() throws InterruptedException {
+
 		IxigoHomePage objIxigoHomePage = new IxigoHomePage(driver);
 		objIxigoHomePage.launchPage();
 		System.out.println("*****************************************************************");
@@ -36,12 +42,29 @@ public class verifyIxigo extends TestEnvironment {
 
 	}
 
+	public void setDates(String pattern) {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		
+		Calendar c1 = Calendar.getInstance();
+		c1.setTime(new Date());
+		c1.add(Calendar.DATE, 5);
+		fromDate = simpleDateFormat.format(c1.getTime());
+
+		Calendar c = Calendar.getInstance();
+		c.setTime(new Date());
+		c.add(Calendar.DATE, 40);
+		String output = simpleDateFormat.format(c.getTime());
+		System.out.println(output);
+		toDate = output;
+	}
+
 	@Test(dependsOnMethods = "verifyIxigoPageIsLoaded")
 	public void verifyPassangerDetailsAreAdded() throws InterruptedException {
+		setDates("ddMMyyyy");
 		IxigoHomePage objIxigoHomePage = new IxigoHomePage(driver);
 		System.out.println("*****************************************************************");
-		objIxigoHomePage.enterTravelDetails(StaticConstantClass.fromLocation, StaticConstantClass.toLocation,
-				StaticConstantClass.fromDate, StaticConstantClass.toDate);
+		objIxigoHomePage.enterTravelDetails(StaticConstantClass.fromLocation, StaticConstantClass.toLocation, fromDate,
+				toDate);
 		System.out.println("*****************************************************************");
 		BookingPage objBookingPage = new BookingPage(driver);
 		Assert.assertTrue(objBookingPage.verifyMoreFiltersLinkIsPresent(), "Verify More Filter link is present");
@@ -54,18 +77,20 @@ public class verifyIxigo extends TestEnvironment {
 			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 		System.out.println("*****************************************************************");
-		
+
+		setDates("dd MMM, EEE");
 		System.out.println("Verifying atleast One Departure and atleast One Return Flight is present");
-		Assert.assertTrue(objBookingPage.getNoOFDepartureFlights()>=1,"Verify Atleast One Departure flight is present");
-		Assert.assertTrue(objBookingPage.getNoOFReturnFlights()>=1,"Verify Atleast One Return flight is present");	
+		Assert.assertTrue(objBookingPage.getNoOFDepartureFlights() >= 1,
+				"Verify Atleast One Departure flight is present");
+		Assert.assertTrue(objBookingPage.getNoOFReturnFlights() >= 1, "Verify Atleast One Return flight is present");
 		Assert.assertEquals(hm.get("Departure Place"), StaticConstantClass.fromLocation, "Verify From Place Acutual : "
 				+ hm.get("Departure Place") + " Expected is : " + StaticConstantClass.fromLocation);
 		Assert.assertEquals(hm.get("Destination Place"), StaticConstantClass.toLocation, "Verify To Place Acutual : "
 				+ hm.get("Destination Place") + " Expected is : " + StaticConstantClass.toLocation);
-		Assert.assertEquals(hm.get("Depart Date"), StaticConstantClass.expectedFromDate, "Verify Depart Date Acutual : "
-				+ hm.get("Depart Date") + " Expected is : " + StaticConstantClass.expectedFromDate);
-		Assert.assertEquals(hm.get("Return Date"), StaticConstantClass.expectedToDate, "Verify Return Date Acutual : "
-				+ hm.get("Return Date") + " Expected is : " + StaticConstantClass.expectedToDate);
+		Assert.assertEquals(hm.get("Depart Date"), fromDate,
+				"Verify Depart Date Acutual : " + hm.get("Depart Date") + " Expected is : " + fromDate);
+		Assert.assertEquals(hm.get("Return Date"), toDate,
+				"Verify Return Date Acutual : " + hm.get("Return Date") + " Expected is : " + toDate);
 		Assert.assertEquals(hm.get("No Of Passangers"), StaticConstantClass.expectedTravellers,
 				"Verify No Of Passangers Acutual : " + hm.get("No Of Passangers") + " Expected is : "
 						+ StaticConstantClass.expectedTravellers);

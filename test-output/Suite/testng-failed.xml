@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="runLocation" value="grid"/>
+  <test thread-count="5" name="Test(failed)" parallel="tests">
     <classes>
       <class name="koch.com.ixigo.verifyIxigo">
         <methods>

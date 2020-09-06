@@ -29,8 +29,8 @@ public class IxigoHomePage extends BasePage {
 	private WebElement webElmDateTableTo;
 	@FindBy(xpath = "//*[contains(text(),'Adult')]/ancestor::*[contains(@class,'number-counter')]//*[@data-val='2']")
 	private WebElement webElmDateNoOfTravellers;
-	@FindBy(xpath = "//button[@class='ixi-icon-arrow rd-next']")
-	private WebElement webElmDateNextIcon;
+	/*@FindBy(xpath = "//button[@class='ixi-icon-arrow rd-next']")
+	private WebElement webElmDateNextIcon;*/
 	
 	
 
@@ -65,21 +65,29 @@ public class IxigoHomePage extends BasePage {
 		webElmFromInput.clear();
 		Thread.sleep(2000);
 		webElmFromInput.sendKeys(from);
+		Thread.sleep(4000);
+		webElmFromInput.clear();
 		Thread.sleep(2000);
+		webElmFromInput.sendKeys(from);
+		Thread.sleep(4000);
 		webElmFromInput.sendKeys(Keys.ENTER);
 
 		System.out.println("Entering To Place as : "+to);
 		webElmToInput.clear();
 		Thread.sleep(2000);
 		webElmToInput.sendKeys(to);
+		Thread.sleep(4000);
+		webElmToInput.clear();
 		Thread.sleep(2000);
+		webElmToInput.sendKeys(to);
+		Thread.sleep(4000);
 		webElmToInput.sendKeys(Keys.ENTER);
 	
 		Thread.sleep(2000);
 		System.out.println("Selecting Depart Date as :"+depDate);
 		webElmDepart.click();
 		Thread.sleep(2000);
-		webElmDateNextIcon.click();
+		//webElmDateNextIcon.click();
 		Thread.sleep(2000);
 		verifyElementIsPresent(getLocatorInfo(webElmDateTableFrom));
 		WebElement fromDate = driver

@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="83855" started-at="2020-08-18T15:52:42Z" finished-at="2020-08-18T15:54:06Z">
+  <suite name="Suite" duration-ms="120093" started-at="2020-09-06T07:06:26Z" finished-at="2020-09-06T07:08:26Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="83855" started-at="2020-08-18T15:52:42Z" finished-at="2020-08-18T15:54:06Z">
-      <class name="koch.com.ixigo.verifyIxigo">
-        <test-method status="PASS" signature="driverSetup()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="driverSetup" is-config="true" duration-ms="4213" started-at="2020-08-18T15:52:42Z" finished-at="2020-08-18T15:52:46Z">
+    <test name="Test2" duration-ms="2103" started-at="2020-09-06T07:06:26Z" finished-at="2020-09-06T07:06:28Z">
+      <class name="koch.com.ixigo.google">
+        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String)[pri:0, instance:koch.com.ixigo.google@530612ba]" name="driverSetup" is-config="true" duration-ms="2113" started-at="2020-09-06T07:06:24Z" finished-at="2020-09-06T07:06:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[grid]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverSetup -->
-        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="verifyIxigoPageIsLoaded" duration-ms="15220" started-at="2020-08-18T15:52:46Z" finished-at="2020-08-18T15:53:02Z">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@530612ba]" name="verifyIxigoPageIsLoaded" duration-ms="2078" started-at="2020-09-06T07:06:26Z" finished-at="2020-09-06T07:06:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="PASS" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="verifyPassangerDetailsAreAdded" duration-ms="36716" started-at="2020-08-18T15:53:02Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2020-08-18T15:53:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyPassangerDetailsAreAdded -->
-        <test-method status="PASS" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="verifyNonStopFlights" duration-ms="12354" started-at="2020-08-18T15:53:38Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2020-08-18T15:53:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNonStopFlights -->
-        <test-method status="PASS" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="14609" started-at="2020-08-18T15:53:51Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2020-08-18T15:54:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyFlightsWithFareLessThanFiveThosuand -->
-        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.verifyIxigo@4bb4de6a]" name="driverClose" is-config="true" duration-ms="703" started-at="2020-08-18T15:54:05Z" finished-at="2020-08-18T15:54:06Z">
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.google@530612ba]" name="driverClose" is-config="true" duration-ms="182" started-at="2020-09-06T07:08:26Z" finished-at="2020-09-06T07:08:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->
+      </class> <!-- koch.com.ixigo.google -->
+    </test> <!-- Test2 -->
+    <test name="Test" duration-ms="120093" started-at="2020-09-06T07:06:26Z" finished-at="2020-09-06T07:08:26Z">
+      <class name="koch.com.ixigo.verifyIxigo">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyIxigoPageIsLoaded" duration-ms="4613" started-at="2020-09-06T07:06:26Z" finished-at="2020-09-06T07:06:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+        <test-method status="PASS" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyPassangerDetailsAreAdded" duration-ms="71852" started-at="2020-09-06T07:06:31Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2020-09-06T07:07:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPassangerDetailsAreAdded -->
+        <test-method status="PASS" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyNonStopFlights" duration-ms="18409" started-at="2020-09-06T07:07:43Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2020-09-06T07:08:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNonStopFlights -->
+        <test-method status="PASS" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="25182" started-at="2020-09-06T07:08:01Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2020-09-06T07:08:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFlightsWithFareLessThanFiveThosuand -->
       </class> <!-- koch.com.ixigo.verifyIxigo -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
