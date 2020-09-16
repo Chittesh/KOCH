@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -22,8 +23,9 @@ public class TestEnvironment {
 	static WebDriver driver;
 
 	@BeforeSuite(alwaysRun = true)
-	@Parameters({ "runLocation", "browserName" })
-	public synchronized void driverSetup(String runLocation, String browserName) throws MalformedURLException {
+	@Parameters({ "runLocation", "browserName"})
+	public synchronized void driverSetup(String runLocation, String browserName, ITestContext ctx)
+			throws MalformedURLException {
 
 		if (runLocation.contains("local")) {
 			String path = System.getProperty("user.dir") + "\\src\\main\\resources\\chromedriver.exe";
@@ -41,6 +43,8 @@ public class TestEnvironment {
 			driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
 			driver.manage().window().maximize();
 		} else if (runLocation.contains("grid")) {
+			// To Get Name From testng xml file
+			String testName = ctx.getCurrentXmlTest().getName();
 
 			DesiredCapabilities capabilities = null;
 			if (browserName.contains("chrome")) {
@@ -48,7 +52,13 @@ public class TestEnvironment {
 			} else if (browserName.contains("firefox")) {
 				capabilities = DesiredCapabilities.firefox();
 			}
-			URL objURL=new URL("http://localhost:8081/wd/hub");
+			
+			String host = "localhost";
+			if (System.getProperty("HUB_HOST") != null) {
+				host = System.getProperty("HUB_HOST");
+			}
+			URL objURL = new URL("http://" + host + ":4444/wd/hub");
+			capabilities.setCapability("name", testName);
 			driver = new RemoteWebDriver(objURL, capabilities);
 
 		}

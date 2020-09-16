@@ -3,7 +3,7 @@ services:
   hubervice:
     image: selenium/hub:3.14
     ports:
-      - "8081:4444"
+      - "4444:4444"
   chromeservice:
     image: selenium/node-chrome:3.14
     depends_on:
@@ -16,3 +16,13 @@ services:
       - hubervice
     environment:
       - HUB_HOST=hubervice
+  flightbookingservice:
+    image: chittesh/ixigonew:latest
+    depends_on:
+      - chromeservice
+      - firefoxservice
+    environment:
+      - HUB_HOST=hubervice
+    volumes:
+      - ./testoutput:/usr/share/chittesh/test-output
+

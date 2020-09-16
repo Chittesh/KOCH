@@ -3,6 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
   <parameter name="browserName" value="chrome"/>
   <parameter name="runLocation" value="grid"/>
+  <parameter name="hubLocation" value="docker"/>
   <test thread-count="5" name="Test(failed)" parallel="tests">
     <classes>
       <class name="koch.com.ixigo.verifyIxigo">

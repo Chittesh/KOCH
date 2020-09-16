@@ -1,0 +1,26 @@
+FROM openjdk:8u212-jre-alpine3.9
+
+# Adding curl and jq on alpine
+RUN apk add curl jq
+
+#Workspace
+WORKDIR /usr/share/chittesh
+
+#ADD .jar files under target from host system
+#into this image
+ADD target/selenium-docker.jar   		selenium-docker.jar
+ADD target/selenium-docker-tests.jar    selenium-docker-tests.jar
+ADD target/libs							libs
+
+#In case of other depedecy like .csv/ .Json .xls files 
+#we need to add them also here
+
+#ADD testNg files to work dir
+ADD testng.xml  						testng.xml
+
+#ADD health check linux exetutable file
+ADD healthcheck.sh						healthcheck.sh
+
+#Now we need to mention what command we need to run
+#ENTRYPOINT java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DHUB_HOST=$HUB_HOST org.testng.TestNG testng.xml
+ENTRYPOINT sh healthcheck.sh

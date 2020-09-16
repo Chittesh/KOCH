@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="runLocation" value="grid"/>
+  <test thread-count="5" name="Test(failed)" parallel="tests">
+    <classes>
+      <class name="koch.com.ixigo.verifyIxigo">
+        <methods>
+          <include name="verifyNonStopFlights"/>
+          <include name="driverClose"/>
+          <include name="driverSetup"/>
+          <include name="verifyFlightsWithFareLessThanFiveThosuand"/>
+          <include name="verifyPassangerDetailsAreAdded"/>
+          <include name="verifyIxigoPageIsLoaded"/>
+        </methods>
+      </class> <!-- koch.com.ixigo.verifyIxigo -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
