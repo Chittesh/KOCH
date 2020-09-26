@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                bat "docker build -t='chittesh/ixigonewjenkins:latest' ."
+                bat "docker build -t=chittesh/ixigonewjenkins:latest ."
             }
         }
         stage('Push Image') {
