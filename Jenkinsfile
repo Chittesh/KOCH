@@ -5,7 +5,7 @@ pipeline {
     	{
     		steps
     		{
-    			bat "docker-compose up -d hub chromeservice firefoxservice"
+    			bat "docker-compose up -d hubervice chromeservice firefoxservice"
     		}
     	}
     	stage("Run flightbookingservice")
