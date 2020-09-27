@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="3" failed="1" ignored="0" total="5" passed="1">
+<testng-results skipped="2" failed="1" ignored="0" total="5" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="3480" started-at="2020-09-15T11:44:15Z" finished-at="2020-09-15T11:44:18Z">
+  <suite name="Suite" duration-ms="37735" started-at="2020-09-27T03:42:31Z" finished-at="2020-09-27T03:43:09Z">
     <groups>
     </groups>
-    <test name="Test2" duration-ms="1433" started-at="2020-09-15T11:44:15Z" finished-at="2020-09-15T11:44:16Z">
+    <test name="Test2" duration-ms="777" started-at="2020-09-27T03:42:31Z" finished-at="2020-09-27T03:42:32Z">
       <class name="koch.com.ixigo.google">
-        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="driverSetup" is-config="true" duration-ms="6100" started-at="2020-09-15T11:44:09Z" finished-at="2020-09-15T11:44:15Z">
+        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="driverSetup" is-config="true" duration-ms="2559" started-at="2020-09-27T03:42:29Z" finished-at="2020-09-27T03:42:31Z">
           <params>
             <param index="0">
               <value>
@@ -28,45 +28,45 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverSetup -->
-        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="verifyIxigoPageIsLoaded" duration-ms="1402" started-at="2020-09-15T11:44:15Z" finished-at="2020-09-15T11:44:16Z">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="verifyIxigoPageIsLoaded" duration-ms="756" started-at="2020-09-27T03:42:31Z" finished-at="2020-09-27T03:42:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="driverClose" is-config="true" duration-ms="20" started-at="2020-09-15T11:44:19Z" finished-at="2020-09-15T11:44:19Z">
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.google@57e1b0c]" name="driverClose" is-config="true" duration-ms="168" started-at="2020-09-27T03:43:09Z" finished-at="2020-09-27T03:43:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->
       </class> <!-- koch.com.ixigo.google -->
     </test> <!-- Test2 -->
-    <test name="Test" duration-ms="3480" started-at="2020-09-15T11:44:15Z" finished-at="2020-09-15T11:44:18Z">
+    <test name="Test" duration-ms="37735" started-at="2020-09-27T03:42:31Z" finished-at="2020-09-27T03:43:09Z">
       <class name="koch.com.ixigo.verifyIxigo">
-        <test-method status="FAIL" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyIxigoPageIsLoaded" duration-ms="3443" started-at="2020-09-15T11:44:15Z" finished-at="2020-09-15T11:44:18Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyIxigoPageIsLoaded" duration-ms="4616" started-at="2020-09-27T03:42:31Z" finished-at="2020-09-27T03:42:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+        <test-method status="FAIL" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyPassangerDetailsAreAdded" duration-ms="33082" started-at="2020-09-27T03:42:36Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2020-09-27T03:43:09Z">
+          <exception class="org.openqa.selenium.ElementNotVisibleException">
             <message>
-              <![CDATA[unknown error: session deleted because of page crash
-from unknown error: cannot determine loading status
-from tab crashed
+              <![CDATA[element not interactable
   (Session info: chrome=70.0.3538.77)
   (Driver info: chromedriver=2.43.600233 (523efee95e3d68b8719b3a1c83051aa63aa6b10d),platform=Linux 4.19.76-linuxkit x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
 System info: host: '68b7e77fd9c1', ip: '172.19.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.76-linuxkit', java.version: '1.8.0_212'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600233 (523efee95e3d68..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:46237}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true, webdriver.remote.sessionid: 9d93f00282b943bb89b89b48fe7...}
-Session ID: 9d93f00282b943bb89b89b48fe7114ad]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600233 (523efee95e3d68..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:37307}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true, webdriver.remote.sessionid: 7b9a55f0f7bfc7f76544f18744b...}
+Session ID: 7b9a55f0f7bfc7f76544f18744bfa800]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: session deleted because of page crash
-from unknown error: cannot determine loading status
-from tab crashed
+              <![CDATA[org.openqa.selenium.ElementNotVisibleException: element not interactable
   (Session info: chrome=70.0.3538.77)
   (Driver info: chromedriver=2.43.600233 (523efee95e3d68b8719b3a1c83051aa63aa6b10d),platform=Linux 4.19.76-linuxkit x86_64) (WARNING: The server did not provide any stacktrace information)
 Command duration or timeout: 0 milliseconds
 Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
 System info: host: '68b7e77fd9c1', ip: '172.19.0.5', os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.76-linuxkit', java.version: '1.8.0_212'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600233 (523efee95e3d68..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:46237}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true, webdriver.remote.sessionid: 9d93f00282b943bb89b89b48fe7...}
-Session ID: 9d93f00282b943bb89b89b48fe7114ad
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600233 (523efee95e3d68..., userDataDir: /tmp/.org.chromium.Chromium...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:37307}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.77, webStorageEnabled: true, webdriver.remote.sessionid: 7b9a55f0f7bfc7f76544f18744b...}
+Session ID: 7b9a55f0f7bfc7f76544f18744bfa800
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -78,9 +78,10 @@ at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttp
 at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:325)
-at koch.com.ixigo.BasePage.launchPage(BasePage.java:34)
-at koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded(verifyIxigo.java:27)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at koch.com.ixigo.IxigoHomePage.enterTravelDetails(IxigoHomePage.java:95)
+at koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded(verifyIxigo.java:66)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,37 +104,11 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:62
 at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="SKIP" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyPassangerDetailsAreAdded" duration-ms="1" started-at="2020-09-15T11:44:18Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2020-09-15T11:44:18Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method verifyIxigo.verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
-at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
-at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at java.lang.Thread.run(Thread.java:748)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPassangerDetailsAreAdded -->
-        <test-method status="SKIP" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyNonStopFlights" duration-ms="0" started-at="2020-09-15T11:44:18Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2020-09-15T11:44:18Z">
+        <test-method status="SKIP" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyNonStopFlights" duration-ms="0" started-at="2020-09-27T03:43:09Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2020-09-27T03:43:09Z">
           <exception class="java.lang.Throwable">
             <message>
               <![CDATA[Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304] depends on not successfully finished methods]]>
@@ -159,7 +134,7 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNonStopFlights -->
-        <test-method status="SKIP" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="0" started-at="2020-09-15T11:44:18Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2020-09-15T11:44:18Z">
+        <test-method status="SKIP" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="0" started-at="2020-09-27T03:43:09Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2020-09-27T03:43:09Z">
           <exception class="java.lang.Throwable">
             <message>
               <![CDATA[Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@4e7dc304] depends on not successfully finished methods]]>

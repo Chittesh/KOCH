@@ -1,13 +1,21 @@
 pipeline {
     agent any
     stages{
-    	stage("Run Test")
+    	stage("Start the docker")
     	{
     		steps
     		{
-    			bat "docker-compose up"
+    			bat "docker-compose up -d hub chromeservice firefoxservice"
     		}
     	}
+    	stage("Run flightbookingservice")
+    	{
+    		steps
+    		{
+    		bat "docker-compose up flightbookingservice"
+    		}
+    	}
+    	
     	stage("Bring Grid down")
     	{
     		steps
