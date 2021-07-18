@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="5862" started-at="2021-07-18T04:06:54Z" finished-at="2021-07-18T04:06:59Z">
+  <suite name="Suite" duration-ms="76456" started-at="2021-07-18T05:03:43Z" finished-at="2021-07-18T05:04:59Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="5862" started-at="2021-07-18T04:06:54Z" finished-at="2021-07-18T04:06:59Z">
+    <test name="Test" duration-ms="76456" started-at="2021-07-18T05:03:43Z" finished-at="2021-07-18T05:04:59Z">
       <class name="koch.com.ixigo.BrowserStackTest">
-        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.BrowserStackTest@e720b71]" name="driverSetup" is-config="true" duration-ms="3435" started-at="2021-07-18T04:06:50Z" finished-at="2021-07-18T04:06:54Z">
+        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.BrowserStackTest@fbd1f6]" name="driverSetup" is-config="true" duration-ms="3782" started-at="2021-07-18T05:03:39Z" finished-at="2021-07-18T05:03:43Z">
           <params>
             <param index="0">
               <value>
@@ -21,18 +21,18 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[org.testng.TestRunner@1e13529a]]>
+                <![CDATA[org.testng.TestRunner@70f43b45]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverSetup -->
-        <test-method status="PASS" signature="test1_2()[pri:0, instance:koch.com.ixigo.BrowserStackTest@e720b71]" name="test1_2" duration-ms="5815" started-at="2021-07-18T04:06:54Z" finished-at="2021-07-18T04:06:59Z">
+        <test-method status="PASS" signature="test1_2()[pri:0, instance:koch.com.ixigo.BrowserStackTest@fbd1f6]" name="test1_2" duration-ms="76392" started-at="2021-07-18T05:03:43Z" finished-at="2021-07-18T05:04:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1_2 -->
-        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.BrowserStackTest@e720b71]" name="driverClose" is-config="true" duration-ms="892" started-at="2021-07-18T04:07:00Z" finished-at="2021-07-18T04:07:00Z">
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.BrowserStackTest@fbd1f6]" name="driverClose" is-config="true" duration-ms="931" started-at="2021-07-18T05:04:59Z" finished-at="2021-07-18T05:05:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverClose -->

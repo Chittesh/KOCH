@@ -21,15 +21,15 @@ import org.testng.annotations.Test;
 
 public class BrowserStackTest extends TestEnvironment {
 	@Test
-	public void test1_2() throws InterruptedException {
+	public void verifyWebsiteListOnHomePage() throws InterruptedException {
 		BrowserStackPage obj = new BrowserStackPage(driver);
-		driver.get("https://www.browserstack.com/guide/ui-testing-with-selenium");
-		Thread.sleep(4000);
+		obj.launchPage();
 		List<String> objActualListFromUI = new ArrayList<String>();
 		objActualListFromUI = obj.getValuesFromHeader();
-		String a[] = new String[] { "Products", "Developers" };
-		List<String> expectedList = Arrays.asList(a);
-		assertEquals(objActualListFromUI, expectedList, "Verify Headers");
+		String expectedOutput[] = new String[] { "Live", "Automate", "Percy", "App Live", "App Automate" };
+		List<String> expectedList = Arrays.asList(expectedOutput);
+		assertEquals(objActualListFromUI, expectedList,
+				"Verify Headers Actual : " + objActualListFromUI + " Expected : " + expectedList);
 	}
 
 }

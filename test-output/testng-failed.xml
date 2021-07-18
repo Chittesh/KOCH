@@ -5,14 +5,13 @@
   <parameter name="runLocation" value="local"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="koch.com.ixigo.sampleTestScript">
+      <class name="koch.com.ixigo.BrowserStackTest">
         <methods>
-          <include name="quitDriver"/>
           <include name="driverClose"/>
           <include name="driverSetup"/>
           <include name="test1_2"/>
         </methods>
-      </class> <!-- koch.com.ixigo.sampleTestScript -->
+      </class> <!-- koch.com.ixigo.BrowserStackTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

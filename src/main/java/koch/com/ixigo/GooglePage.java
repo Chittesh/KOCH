@@ -23,24 +23,25 @@ public class GooglePage extends BasePage {
 	@FindBy(xpath = "//input[@name='q']")
 	private WebElement elmSearch;
 
-	WebDriver objWebDriver;
-
 	public GooglePage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 
 	public void enterValueInTextBox(String text) {
+		verifyElementIsPresent(getLocatorInfo(elmSearch));
 		elmSearch.sendKeys(text);
 		elmSearch.sendKeys(Keys.DOWN);
 		elmSearch.sendKeys(Keys.TAB);
 	}
 
 	public void clickOnSearchButton() {
+		verifyElementIsPresent(getLocatorInfo(elmButton));
 		elmButton.click();
 	}
 
 	public void clickOnLink() {
+		verifyElementIsPresent(getLocatorInfo(elmLink));
 		elmLink.click();
 	}
 
