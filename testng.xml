@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
 
-<suite name="Suite" parallel="tests">
-	<parameter name="runLocation" value="grid" />
+	<parameter name="runLocation" value="local" />
 	<parameter name="browserName" value="chrome" />
 	<test thread-count="5" name="Test">
+
 		<classes>
-			<class name="koch.com.ixigo.verifyIxigo" />
+			<class name="koch.com.ixigo.BrowserStackTest" />
+
 		</classes>
-	</test> 
-	
-	<test thread-count="5" name="Test2">
-		<classes>
-			<class name="koch.com.ixigo.google" />
-		</classes>
-	</test> 
-</suite> 
+	</test>
+</suite>

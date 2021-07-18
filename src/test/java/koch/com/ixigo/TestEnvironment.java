@@ -23,7 +23,7 @@ public class TestEnvironment {
 	static WebDriver driver;
 
 	@BeforeSuite(alwaysRun = true)
-	@Parameters({ "runLocation", "browserName"})
+	@Parameters({ "runLocation", "browserName" })
 	public synchronized void driverSetup(String runLocation, String browserName, ITestContext ctx)
 			throws MalformedURLException {
 
@@ -52,7 +52,7 @@ public class TestEnvironment {
 			} else if (browserName.contains("firefox")) {
 				capabilities = DesiredCapabilities.firefox();
 			}
-			
+
 			String host = "localhost";
 			if (System.getProperty("HUB_HOST") != null) {
 				host = System.getProperty("HUB_HOST");
