@@ -1,3 +1,4 @@
+#Taking alpine
 FROM openjdk:8u212-jre-alpine3.9
 
 # Adding curl and jq on alpine

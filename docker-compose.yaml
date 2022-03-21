@@ -1,26 +1,19 @@
-version: "3"
 services:
-  hubervice:
-    image: selenium/hub:3.14
-  chromeservice:
-    image: selenium/node-chrome:3.14
+  chrome:
+    image: selenium/node-chrome:4.1.2-20220217
+    shm_size: 2gb
     depends_on:
-      - hubervice
+      - selenium-hub
     environment:
-      - HUB_HOST=hubervice
-  firefoxservice:
-    image: selenium/node-firefox:3.14
-    depends_on:
-      - hubervice
-    environment:
-      - HUB_HOST=hubervice
-  flightbookingservice:
-    image: chittesh/ixigonew:latest
-    depends_on:
-      - chromeservice
-      - firefoxservice
-    environment:
-      - HUB_HOST=hubervice
-    volumes:
-      - ./testoutput:/usr/share/chittesh/test-output
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "6900:5900"
 
+  selenium-hub:
+    image: selenium/hub:4.1.2-20220217
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"

@@ -1,67 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="2" failed="1" ignored="0" total="5" passed="2">
+<testng-results skipped="5" failed="2" ignored="4" total="14" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="63684" started-at="2020-09-12T07:04:06Z" finished-at="2020-09-12T07:05:10Z">
+  <suite name="Suite" duration-ms="69185" started-at="2022-03-15T06:03:32Z" finished-at="2022-03-15T06:04:41Z">
     <groups>
     </groups>
-    <test name="Test2" duration-ms="4164" started-at="2020-09-12T07:04:06Z" finished-at="2020-09-12T07:04:10Z">
-      <class name="koch.com.ixigo.google">
-        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.google@530612ba]" name="driverSetup" is-config="true" duration-ms="3517" started-at="2020-09-12T07:04:03Z" finished-at="2020-09-12T07:04:06Z">
+    <test name="TestFireFox" duration-ms="69185" started-at="2022-03-15T06:03:32Z" finished-at="2022-03-15T06:04:41Z">
+      <class name="koch.com.ixigo.verifyIxigo">
+        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="driverSetup" is-config="true" duration-ms="21937" started-at="2022-03-15T06:03:32Z" finished-at="2022-03-15T06:03:54Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[grid]]>
+                <![CDATA[cloud]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[docker]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[org.testng.TestRunner@30f842ca]]>
+                <![CDATA[org.testng.TestRunner@731f8236]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverSetup -->
-        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@530612ba]" name="verifyIxigoPageIsLoaded" duration-ms="4128" started-at="2020-09-12T07:04:06Z" finished-at="2020-09-12T07:04:10Z">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="verifyIxigoPageIsLoaded" duration-ms="35993" started-at="2022-03-15T06:03:54Z" finished-at="2022-03-15T06:04:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.google@530612ba]" name="driverClose" is-config="true" duration-ms="82" started-at="2020-09-12T07:05:10Z" finished-at="2020-09-12T07:05:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- driverClose -->
-      </class> <!-- koch.com.ixigo.google -->
-    </test> <!-- Test2 -->
-    <test name="Test" duration-ms="63684" started-at="2020-09-12T07:04:06Z" finished-at="2020-09-12T07:05:10Z">
-      <class name="koch.com.ixigo.verifyIxigo">
-        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyIxigoPageIsLoaded" duration-ms="8711" started-at="2020-09-12T07:04:06Z" finished-at="2020-09-12T07:04:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyIxigoPageIsLoaded -->
-        <test-method status="FAIL" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyPassangerDetailsAreAdded" duration-ms="54929" started-at="2020-09-12T07:04:15Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2020-09-12T07:05:10Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="FAIL" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="verifyPassangerDetailsAreAdded" duration-ms="5506" started-at="2022-03-15T06:04:36Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2022-03-15T06:04:41Z">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Verify From Place Acutual : IXG - Belgaum Expected is : PNQ - Pune expected [PNQ - Pune] but found [IXG - Belgaum]]]>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.77)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'BSC-PF10PQNE', ip: '192.168.48.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.ZHhfXY}, goog:chromeOptions: {debuggerAddress: localhost:45711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 879c4083600475fa9251287151b...}
+Session ID: 879c4083600475fa9251287151b84aca]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Verify From Place Acutual : IXG - Belgaum Expected is : PNQ - Pune expected [PNQ - Pune] but found [IXG - Belgaum]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:453)
-at koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded(verifyIxigo.java:86)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.77)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'BSC-PF10PQNE', ip: '192.168.48.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.ZHhfXY}, goog:chromeOptions: {debuggerAddress: localhost:45711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 879c4083600475fa9251287151b...}
+Session ID: 879c4083600475fa9251287151b84aca
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:118)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy8.clear(Unknown Source)
+at koch.com.ixigo.IxigoHomePage.enterTravelDetails(IxigoHomePage.java:65)
+at koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded(verifyIxigo.java:66)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -84,17 +94,17 @@ at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPassangerDetailsAreAdded -->
-        <test-method status="SKIP" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyNonStopFlights" duration-ms="0" started-at="2020-09-12T07:05:10Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2020-09-12T07:05:10Z">
+        <test-method status="SKIP" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="verifyNonStopFlights" duration-ms="0" started-at="2022-03-15T06:04:41Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2022-03-15T06:04:41Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae] depends on not successfully finished methods]]>
+              <![CDATA[Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -114,13 +124,192 @@ at java.lang.Thread.run(Unknown Source)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNonStopFlights -->
-        <test-method status="SKIP" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="0" started-at="2020-09-12T07:05:10Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2020-09-12T07:05:10Z">
+        <test-method status="SKIP" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="0" started-at="2022-03-15T06:04:41Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2022-03-15T06:04:41Z">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae] depends on not successfully finished methods]]>
+              <![CDATA[Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7] depends on not successfully finished methods]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@7dc222ae] depends on not successfully finished methods
+              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFlightsWithFareLessThanFiveThosuand -->
+        <test-method status="PASS" signature="driverClose()[pri:0, instance:koch.com.ixigo.verifyIxigo@2df32bf7]" name="driverClose" is-config="true" duration-ms="736" started-at="2022-03-15T06:04:41Z" finished-at="2022-03-15T06:04:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverClose -->
+      </class> <!-- koch.com.ixigo.verifyIxigo -->
+      <class name="koch.com.ixigo.google">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@530612ba]" name="verifyIxigoPageIsLoaded" duration-ms="5709" started-at="2022-03-15T06:04:30Z" finished-at="2022-03-15T06:04:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+      </class> <!-- koch.com.ixigo.google -->
+    </test> <!-- TestFireFox -->
+    <test name="TestChrome" duration-ms="69173" started-at="2022-03-15T06:03:32Z" finished-at="2022-03-15T06:04:41Z">
+      <class name="koch.com.ixigo.verifyIxigo">
+        <test-method status="PASS" signature="driverSetup(java.lang.String, java.lang.String, org.testng.ITestContext)[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947]" name="driverSetup" is-config="true" duration-ms="25398" started-at="2022-03-15T06:03:32Z" finished-at="2022-03-15T06:03:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[cloud]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[org.testng.TestRunner@226a82c4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverSetup -->
+        <test-method status="FAIL" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947]" name="verifyIxigoPageIsLoaded" duration-ms="38629" started-at="2022-03-15T06:03:57Z" finished-at="2022-03-15T06:04:36Z">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.77)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'BSC-PF10PQNE', ip: '192.168.48.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.ZHhfXY}, goog:chromeOptions: {debuggerAddress: localhost:45711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 879c4083600475fa9251287151b...}
+Session ID: 879c4083600475fa9251287151b84aca]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=91.0.4472.77)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.9.1', revision: '63f7b50', time: '2018-02-07T22:25:02.294Z'
+System info: host: 'BSC-PF10PQNE', ip: '192.168.48.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: /tmp/.com.google.Chrome.ZHhfXY}, goog:chromeOptions: {debuggerAddress: localhost:45711}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true, webdriver.remote.sessionid: 879c4083600475fa9251287151b...}
+Session ID: 879c4083600475fa9251287151b84aca
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:160)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:128)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at com.sun.proxy.$Proxy8.getAttribute(Unknown Source)
+at koch.com.ixigo.IxigoHomePage.getDefaultTravellers(IxigoHomePage.java:57)
+at koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded(verifyIxigo.java:38)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+        <test-method status="SKIP" signature="verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947]" name="verifyPassangerDetailsAreAdded" duration-ms="0" started-at="2022-03-15T06:04:41Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyIxigoPageIsLoaded" finished-at="2022-03-15T06:04:41Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method verifyIxigo.verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyPassangerDetailsAreAdded()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPassangerDetailsAreAdded -->
+        <test-method status="SKIP" signature="verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947]" name="verifyNonStopFlights" duration-ms="0" started-at="2022-03-15T06:04:41Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyPassangerDetailsAreAdded" finished-at="2022-03-15T06:04:41Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyNonStopFlights()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+at java.util.concurrent.FutureTask.run(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNonStopFlights -->
+        <test-method status="SKIP" signature="verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947]" name="verifyFlightsWithFareLessThanFiveThosuand" duration-ms="0" started-at="2022-03-15T06:04:41Z" depends-on-methods="koch.com.ixigo.verifyIxigo.verifyNonStopFlights" finished-at="2022-03-15T06:04:41Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method verifyIxigo.verifyFlightsWithFareLessThanFiveThosuand()[pri:0, instance:koch.com.ixigo.verifyIxigo@1068e947] depends on not successfully finished methods
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
@@ -141,6 +330,12 @@ at java.lang.Thread.run(Unknown Source)
           </reporter-output>
         </test-method> <!-- verifyFlightsWithFareLessThanFiveThosuand -->
       </class> <!-- koch.com.ixigo.verifyIxigo -->
-    </test> <!-- Test -->
+      <class name="koch.com.ixigo.google">
+        <test-method status="PASS" signature="verifyIxigoPageIsLoaded()[pri:0, instance:koch.com.ixigo.google@5fcd892a]" name="verifyIxigoPageIsLoaded" duration-ms="5126" started-at="2022-03-15T06:04:36Z" finished-at="2022-03-15T06:04:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyIxigoPageIsLoaded -->
+      </class> <!-- koch.com.ixigo.google -->
+    </test> <!-- TestChrome -->
   </suite> <!-- Suite -->
 </testng-results>

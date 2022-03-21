@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Suite" parallel="tests">
-	<parameter name="runLocation" value="grid" />
-	<parameter name="browserName" value="chrome" />
-	<test thread-count="5" name="Test">
+<suite name="Suite" parallel="tests" thread-count="5">
+<parameter name="runLocation" value="cloud" />
+	<test thread-count="5" name="TestChrome">
+		
+		<parameter name="browserName" value="chrome" />
 		<classes>
 			<class name="koch.com.ixigo.verifyIxigo" />
-		</classes>
-	</test> 
-	
-	<test thread-count="5" name="Test2">
-		<classes>
 			<class name="koch.com.ixigo.google" />
 		</classes>
-	</test> 
+	</test>
+
+
+	<test thread-count="5" name="TestFireFox">
+		
+		<parameter name="browserName" value="firefox" />
+		<classes>
+			<class name="koch.com.ixigo.verifyIxigo" />
+			<class name="koch.com.ixigo.google" />
+		</classes>
+	</test>
 </suite> 
+
+
+
